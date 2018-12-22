@@ -45,7 +45,7 @@ class Login extends Component {
               onClick={() => this.setState({ login: !login })}
             >
               {login
-              ? 'neet to create an account?'
+              ? 'need to create an account?'
               : 'already have an account?'}
             </div>
           </div>
