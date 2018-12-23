@@ -181,26 +181,26 @@ class LinkList extends Component {
             : 0;
 
           return (
-            <div>
-          {linksToRender.map((link, index) => (
-            <Link
-              key={link.id}
-              link={link}
-              index={index}
-              updateStoreAfterVote={this._updateCacheAfterVote}
-            />
-          ))}
-          {isNewPage &&(
-            <div className="flex ml4 mv3 gray">
-              <div className="pointer mr2" onClick={this._previousPage}>
-                Previous
-              </div>
-              <div className="pointer" onClick={() => this._nextPage(data)}>
-                Next
-              </div>
-            </div>
-          )}
-            </div>
+            <Fragment>
+              {linksToRender.map((link, index) => (
+                <Link
+                  key={link.id}
+                  link={link}
+                  index={index + pageIndex}
+                  updateStoreAfterVote={this._updateCacheAfterVote}
+                />
+              ))}
+              {isNewPage &&(
+                <div className="flex ml4 mv3 gray">
+                  <div className="pointer mr2" onClick={this._previousPage}>
+                    Previous
+                  </div>
+                  <div className="pointer" onClick={() => this._nextPage(data)}>
+                    Next
+                  </div>
+                </div>
+              )}
+            </Fragment>
           )
         }}
       </Query>
