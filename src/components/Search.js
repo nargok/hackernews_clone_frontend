@@ -61,4 +61,5 @@ class Search extends Component {
    }
 }
 
+// withApollo: When wrapped around a component, it injects the 'ApolloClient' instance into the component's props
 export default withApollo(Search);
